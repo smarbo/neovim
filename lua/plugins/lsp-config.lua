@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "rust_analyzer" },
+				ensure_installed = { "lua_ls", "tsserver", "rust_analyzer", "html" },
         automatic_installation = true,
 				PATH = "prepend",
 			})
@@ -25,10 +25,15 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.tsserver.setup({
-				capabilities = capabilities,
-				cmd = { "typescript-language-server.cmd", "--stdio" },
+				capabilities = capabilities
 			})
       lspconfig.rust_analyzer.setup({
+        capabilities = capabilities
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.html.setup({
         capabilities = capabilities
       })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

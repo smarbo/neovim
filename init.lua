@@ -20,3 +20,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 vim.keymap.set('i', '<C-l>', '<Esc>', { noremap = true, silent = true })
+ vim.keymap.set('n', '<C-s>', ':wa<CR>', { noremap = true, silent = true })
+   vim.keymap.set('i', '<C-s>', '<Esc>:wa<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', '<C-v>', { noremap = true, silent = true })
