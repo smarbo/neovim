@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "rust_analyzer", "html" },
+				ensure_installed = { "lua_ls", "tsserver", "rust_analyzer", "html", "clangd", "asm_lsp" },
         automatic_installation = true,
 				PATH = "prepend",
 			})
@@ -25,6 +25,12 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.tsserver.setup({
+				capabilities = capabilities
+			})
+			lspconfig.asm_lsp.setup({
+				capabilities = capabilities
+			})
+			lspconfig.clangd.setup({
 				capabilities = capabilities
 			})
       lspconfig.rust_analyzer.setup({
@@ -41,4 +47,15 @@ return {
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function ()
+      require("lsp_signature").setup({
+        bind = true,
+        handler_opts = {
+          border = "rounded"
+        }
+      })
+    end
+  },
 }
