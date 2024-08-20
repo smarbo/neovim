@@ -14,3 +14,6 @@
 - Leader+fp: (Not so live) Grep files
 - Leader+pv: Netrw
 - Leader+n: Telescope file browser
+- Leader+ga: git add .
+- Leader+gc: git commit, opens buffer for commit message
+- Leader+gp: git push
