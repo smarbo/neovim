@@ -7,10 +7,10 @@ Requirements:
 
 ### Keymaps:
 - Leader: space
-- <leader><space>: Find files
-- <leader>fg: Live grep files
-- <C-p>: Git files
-- <C-s>: Save
-- <leader>fp: (Not so live) Grep files
-- <leader>pv: Netrw
-- <leader>n: Telescope file browser
+- Leader+space: Find files
+- Leader+fg: Live grep files
+- Ctrl+p: Git files
+- Ctrl+s: Save
+- Leader+fp: (Not so live) Grep files
+- Leader+pv: Netrw
+- Leader+n: Telescope file browser
