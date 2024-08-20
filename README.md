@@ -13,4 +13,4 @@ Requirements:
 - <C-s>: Save
 - <leader>fp: (Not so live) Grep files
 - <leader>pv: Netrw
-- <leader>fb: Telescope file browser
+- <leader>n: Telescope file browser
