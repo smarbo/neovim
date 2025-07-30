@@ -70,6 +70,16 @@ return {
     },
     config = function()
       local lsp_zero = require('lsp-zero')
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '●', -- or '■', '>>', '▶', etc.
+          spacing = 4,
+        },
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+      })
 
       -- lsp_attach is where you enable features that only work
       -- if there is a language server active in the file
